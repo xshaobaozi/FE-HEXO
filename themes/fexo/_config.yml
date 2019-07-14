@@ -1,6 +1,6 @@
 # Blog info
-blog_name: 包子的Blog
-slogan: 就想记录一下~
+blog_name: Hey，来了就进来看看哦~
+slogan: 一个很随心的blog，就想写写东西，技术也好，兴趣也好，干嘛要弄限制级呢😝
 url: http://www.bao-never.top
 
 # Set avatar (Absolute url and relative url)
@@ -16,39 +16,18 @@ home_nav:
   - name: Blog
     url: /archives
     target_blank: false #不在新页面打开
-  - name: Project
-    url: /project/
-    target_blank: true #在新页面打开
   - name: Github
-    url: https://github.com/forsigner
-    target_blank: true
-  - name: Twitter
-    url: https://twitter.com/forsigner
-    target_blank: true
+    url: https://github.com/xshaobaozi
+    target_blank: true #在新页面打开
 
 # config page nav
 page_nav:
   - name: 博客
     url: /archives/
     target_blank: false # 不在新页面打开
-  - name: 分类
-    url: /category/
-    target_blank: false
-  - name: 标签
-    url: /tag/
-    target_blank: false
-  - name: 友链
-    url: /link/
-    target_blank: false
   - name: 关于
     url: /about/
     target_blank: false
-  - name: RSS
-    url: /atom.xml
-    target_blank: true # 在新页面打开
-  - name: 搜索
-    url: /search/
-    target_blank: false # 在新页面打开
 
 page_nav_style: CIRCLE  # CIRCLE|ROUND_RECT
 
@@ -59,7 +38,7 @@ breadcrumb:
 # 盒子
 toolbox:
   isShow: true # true|fase
-  text: 盒子
+  text: 导航
 
 search_slogan:
   isShow: true # true|fase
@@ -72,13 +51,13 @@ link_slogan:
 
 # set backtop show or hide
 backtop:
-  home: false
-  archive: false
-  category: true
+  home: true
+  archive: true
+  category: false
   tag: true
   post: true
   link: false
-  about: false
+  about: true
 
 donation:
   show: false
@@ -185,7 +164,7 @@ valine:
 
 
 # 不算子,文章访问量统计和显示
-busuanzi: true
+busuanzi: false
 
 # =========================================================
 # 页面内容设置
