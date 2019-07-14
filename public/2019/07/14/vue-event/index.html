@@ -7,7 +7,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>网站服务器搭建 | baozi-blog</title>
+  <title>vue-event | baozi-blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,17 +15,17 @@
     <meta name="keywords" content="forsigner,前端,前端开发,frontend,design,nodejs,JavaScript">
   
 
-  <meta name="description" content="目录结构/etc/nginx /opt/config/nginx 更新软件apt update Nginxapt install nginx nodejsapt install nodejs">
+  <meta name="description" content="Vue组建通信在写Vue页面的时候有时候需要通过事件来处理某些操作,通过事件方式可以更方便的包装我们的组件，通过抽象某种行为，以事件的方式派发出去就可以更好的封装我们的基础组件和组织我们的业务文件比如 父组件与子组件之间的通信12&amp;lt;!-- parent.vue --&amp;gt;&amp;lt;children @hangleEmit=&quot;hangleEmit&quot;&amp;gt;&amp;lt;/children&amp;gt;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网站服务器搭建">
-<meta property="og:url" content="http://yoursite.com/2019/07/12/baozi-1/index.html">
+<meta property="og:title" content="vue-event">
+<meta property="og:url" content="http://yoursite.com/2019/07/14/vue-event/index.html">
 <meta property="og:site_name" content="baozi-blog">
-<meta property="og:description" content="目录结构/etc/nginx /opt/config/nginx 更新软件apt update Nginxapt install nginx nodejsapt install nodejs">
+<meta property="og:description" content="Vue组建通信在写Vue页面的时候有时候需要通过事件来处理某些操作,通过事件方式可以更方便的包装我们的组件，通过抽象某种行为，以事件的方式派发出去就可以更好的封装我们的基础组件和组织我们的业务文件比如 父组件与子组件之间的通信12&amp;lt;!-- parent.vue --&amp;gt;&amp;lt;children @hangleEmit=&quot;hangleEmit&quot;&amp;gt;&amp;lt;/children&amp;gt;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-14T08:27:44.144Z">
+<meta property="og:updated_time" content="2019-07-14T12:06:57.367Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网站服务器搭建">
-<meta name="twitter:description" content="目录结构/etc/nginx /opt/config/nginx 更新软件apt update Nginxapt install nginx nodejsapt install nodejs">
+<meta name="twitter:title" content="vue-event">
+<meta name="twitter:description" content="Vue组建通信在写Vue页面的时候有时候需要通过事件来处理某些操作,通过事件方式可以更方便的包装我们的组件，通过抽象某种行为，以事件的方式派发出去就可以更好的封装我们的基础组件和组织我们的业务文件比如 父组件与子组件之间的通信12&amp;lt;!-- parent.vue --&amp;gt;&amp;lt;children @hangleEmit=&quot;hangleEmit&quot;&amp;gt;&amp;lt;/children&amp;gt;">
 
   
 
@@ -195,20 +195,20 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录结构"><span class="toc-text">目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新软件"><span class="toc-text">更新软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx"><span class="toc-text">Nginx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nodejs"><span class="toc-text">nodejs</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue组建通信"><span class="toc-text">Vue组建通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#父组件与子组件之间的通信"><span class="toc-text">父组件与子组件之间的通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#兄弟组件通信"><span class="toc-text">兄弟组件通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#爷孙或者孙孙组件通讯"><span class="toc-text">爷孙或者孙孙组件通讯</span></a></li></ol></li></ol>
   </div>
 
 
 
 <div class="content content-post CENTER">
-   <article id="post-baozi-1" class="article article-type-post" itemprop="blogPost">
+   <article id="post-vue-event" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">网站服务器搭建</h1>
+    <h1 class="post-title">vue-event</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2019.07.12</span>
+        <span>2019.07.14</span>
       </span>
 
       
@@ -236,11 +236,19 @@ ga('send', 'pageview');
 
   <div class="article-content">
     
-      <h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>/etc/nginx</p>
-<p>/opt/config/nginx</p>
-<h2 id="更新软件"><a href="#更新软件" class="headerlink" title="更新软件"></a>更新软件</h2><p>apt update</p>
-<h3 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h3><p>apt install nginx</p>
-<h3 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a>nodejs</h3><p>apt install nodejs</p>
+      <h2 id="Vue组建通信"><a href="#Vue组建通信" class="headerlink" title="Vue组建通信"></a>Vue组建通信</h2><p>在写Vue页面的时候有时候需要通过事件来处理某些操作,通过事件方式可以更方便的包装我们的组件，通过抽象某种行为，以事件的方式派发出去就可以更好的封装我们的基础组件和组织我们的业务文件<br>比如</p>
+<h3 id="父组件与子组件之间的通信"><a href="#父组件与子组件之间的通信" class="headerlink" title="父组件与子组件之间的通信"></a>父组件与子组件之间的通信</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- parent.vue --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">children</span> @<span class="attr">hangleEmit</span>=<span class="string">"hangleEmit"</span>&gt;</span><span class="tag">&lt;/<span class="name">children</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// child.vue</span></span><br><span class="line">handleEmit() &#123;</span><br><span class="line">    <span class="keyword">this</span>.$emit(<span class="string">'hangleEmit'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式的调用很熟悉吧 这就是vue常用的事件方式进行的绑定和传递</p>
+<h3 id="兄弟组件通信"><a href="#兄弟组件通信" class="headerlink" title="兄弟组件通信"></a>兄弟组件通信</h3><p>一般来说兄弟组件之间的通信有这么几种方式</p>
+<ol>
+<li>通过共同的父组件统一调用</li>
+<li>通过evebtBus进行通信</li>
+<li>通过vuex进行通信，其实就是共享数据的吧（感觉也不能说是通信）</li>
+</ol>
+<h3 id="爷孙或者孙孙组件通讯"><a href="#爷孙或者孙孙组件通讯" class="headerlink" title="爷孙或者孙孙组件通讯"></a>爷孙或者孙孙组件通讯</h3><p>个人感觉深层级的调用应该很少这种场景 如果有的话 请思考一下为什么要这么写 但是如果真的有的话 参照上一方法</p>
 
     
   </div>
@@ -252,10 +260,10 @@ ga('send', 'pageview');
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2019/07/12/hello-world/">
+    <a class="show pull-left" href="/2019/07/12/baozi-1/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2019/07/14/vue-event/">
+    <a class="show pull-right" href="/2019/07/14/js-event/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
