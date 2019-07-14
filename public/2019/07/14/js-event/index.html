@@ -7,7 +7,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>js-event | baozi-blog</title>
+  <title>js-event | 某包子不负责任的blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,17 +15,17 @@
     <meta name="keywords" content="forsigner,前端,前端开发,frontend,design,nodejs,JavaScript">
   
 
-  <meta name="description" content="JS实现Event功能写vue代码写多了 对事件这种东西也有一定了解了所有试着实现一套event 顺便谢谢class（太久没用都忘记怎么写了） 设计之初先考虑暴露的api 12345678// 通过on监听事件event.prototype.on = function()&amp;#123;&amp;#125;// 通过once监听并只触发一次事件event.prototype.once = function()">
+  <meta name="description" content="JS实现Event功能写vue代码写多了 对事件这种东西也有一定了解了所有试着实现一套event 顺便谢谢class（太久没用都忘记怎么写了） 设计设计之初先考虑暴露的api 12345678// 通过on监听事件event.prototype.on = function()&amp;#123;&amp;#125;// 通过once监听并只触发一次事件event.prototype.once = function">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js-event">
 <meta property="og:url" content="http://yoursite.com/2019/07/14/js-event/index.html">
-<meta property="og:site_name" content="baozi-blog">
-<meta property="og:description" content="JS实现Event功能写vue代码写多了 对事件这种东西也有一定了解了所有试着实现一套event 顺便谢谢class（太久没用都忘记怎么写了） 设计之初先考虑暴露的api 12345678// 通过on监听事件event.prototype.on = function()&amp;#123;&amp;#125;// 通过once监听并只触发一次事件event.prototype.once = function()">
+<meta property="og:site_name" content="某包子不负责任的blog">
+<meta property="og:description" content="JS实现Event功能写vue代码写多了 对事件这种东西也有一定了解了所有试着实现一套event 顺便谢谢class（太久没用都忘记怎么写了） 设计设计之初先考虑暴露的api 12345678// 通过on监听事件event.prototype.on = function()&amp;#123;&amp;#125;// 通过once监听并只触发一次事件event.prototype.once = function">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-14T12:05:25.578Z">
+<meta property="og:updated_time" content="2019-07-14T12:27:57.984Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js-event">
-<meta name="twitter:description" content="JS实现Event功能写vue代码写多了 对事件这种东西也有一定了解了所有试着实现一套event 顺便谢谢class（太久没用都忘记怎么写了） 设计之初先考虑暴露的api 12345678// 通过on监听事件event.prototype.on = function()&amp;#123;&amp;#125;// 通过once监听并只触发一次事件event.prototype.once = function()">
+<meta name="twitter:description" content="JS实现Event功能写vue代码写多了 对事件这种东西也有一定了解了所有试着实现一套event 顺便谢谢class（太久没用都忘记怎么写了） 设计设计之初先考虑暴露的api 12345678// 通过on监听事件event.prototype.on = function()&amp;#123;&amp;#125;// 通过once监听并只触发一次事件event.prototype.once = function">
 
   
 
@@ -86,9 +86,6 @@ ga('send', 'pageview');
 
 
   
-    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  
 
 </head>
 </html>
@@ -96,14 +93,14 @@ ga('send', 'pageview');
 
 
   
-    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+    <span id="toolbox-mobile" class="toolbox-mobile">导航</span>
   
 
   <div class="post-header CENTER">
    
   <div class="toolbox">
     <a class="toolbox-entry" href="/">
-      <span class="toolbox-entry-text">盒子</span>
+      <span class="toolbox-entry-text">导航</span>
       <i class="icon-angle-down"></i>
       <i class="icon-home"></i>
     </a>
@@ -123,66 +120,11 @@ ga('send', 'pageview');
         <li class="item-toolbox">
           <a
             class="CIRCLE"
-            href="/category/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            分类
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/tag/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            标签
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/link/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            友链
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
             href="/about/"
             rel="noopener noreferrer"
             target="_self"
             >
             关于
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/atom.xml"
-            rel="noopener noreferrer"
-            target="_blank"
-            >
-            RSS
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/search/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            搜索
           </a>
         </li>
       
@@ -195,7 +137,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JS实现Event功能"><span class="toc-text">JS实现Event功能</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JS实现Event功能"><span class="toc-text">JS实现Event功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设计"><span class="toc-text">设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完整代码"><span class="toc-text">完整代码</span></a></li></ol></li></ol>
   </div>
 
 
@@ -224,12 +166,6 @@ ga('send', 'pageview');
       
 
       
-      <i class="fa fa-eye"></i> 
-        <span id="busuanzi_container_page_pv">
-           &nbsp热度 <span id="busuanzi_value_page_pv">
-           <i class="fa fa-spinner fa-spin"></i></span>℃
-        </span>
-      
       
     </div>
   </header>
@@ -237,11 +173,11 @@ ga('send', 'pageview');
   <div class="article-content">
     
       <h2 id="JS实现Event功能"><a href="#JS实现Event功能" class="headerlink" title="JS实现Event功能"></a>JS实现Event功能</h2><p>写vue代码写多了 对事件这种东西也有一定了解了<br>所有试着实现一套event 顺便谢谢class（太久没用都忘记怎么写了）</p>
-<p>设计之初先考虑暴露的api</p>
+<h3 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h3><p>设计之初先考虑暴露的api</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过on监听事件</span></span><br><span class="line">event.prototype.on = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="comment">// 通过once监听并只触发一次事件</span></span><br><span class="line">event.prototype.once = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="comment">// 通过remove移除事件</span></span><br><span class="line">event.prototype.remove = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="comment">// 通过emit触发事件</span></span><br><span class="line">event.prototype.emit = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 
-<p>内部通过定义一个字段保存事件的队列，支持on多个事件，通过emit按顺序触发队列和传递参数<br>简单实现了一下 貌似也能用=。=<br>可能也有些情况没考虑吧 比如想移除指定的callback 错误传参的判定之类<br>有机会再写吧😬</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="keyword">this</span>.emitList = &#123;&#125;;</span><br><span class="line">        <span class="keyword">this</span>.onceList = [];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    on(name, fn) &#123;</span><br><span class="line">        <span class="keyword">this</span>.setEvent.call(<span class="keyword">this</span>,name, fn);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    once(name, fn) &#123;</span><br><span class="line">        <span class="keyword">this</span>.setEvent.call(<span class="keyword">this</span>,name, fn);</span><br><span class="line">        <span class="keyword">this</span>.onceList.push(name)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    remove(name) &#123;</span><br><span class="line">        <span class="keyword">delete</span> <span class="keyword">this</span>.emitList[name]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    emit(name, params) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">this</span>.emitList[name]) <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">`----- no <span class="subst">$&#123;name&#125;</span>-----`</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.emitList[name].forEach(<span class="function"><span class="params">item</span> =&gt;</span> item(params));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.onceList.findIndex(<span class="function"><span class="params">item</span> =&gt;</span> item === name) &gt; <span class="number">-1</span>) <span class="keyword">this</span>.remove(name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setEvent</span>(<span class="params">name, fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> fnList = <span class="keyword">this</span>.emitList[name];</span><br><span class="line">    <span class="keyword">if</span> (!fnList) &#123;</span><br><span class="line">        <span class="keyword">this</span>.emitList[name] = [fn];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        fnList.push(fn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>内部通过定义一个字段保存事件的队列，支持on多个事件，通过emit按顺序触发队列和传递参数<br>简单实现了一下 貌似也能用=。=<br>可能也有些情况没考虑吧 比如想移除指定的callback 错误传参的判定之类<br>有机会再写吧😬</p>
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="keyword">this</span>.emitList = &#123;&#125;;</span><br><span class="line">        <span class="keyword">this</span>.onceList = [];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    on(name, fn) &#123;</span><br><span class="line">        <span class="keyword">this</span>.setEvent.call(<span class="keyword">this</span>,name, fn);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    once(name, fn) &#123;</span><br><span class="line">        <span class="keyword">this</span>.setEvent.call(<span class="keyword">this</span>,name, fn);</span><br><span class="line">        <span class="keyword">this</span>.onceList.push(name)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    remove(name) &#123;</span><br><span class="line">        <span class="keyword">delete</span> <span class="keyword">this</span>.emitList[name]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    emit(name, params) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">this</span>.emitList[name]) <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">`----- no <span class="subst">$&#123;name&#125;</span>-----`</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.emitList[name].forEach(<span class="function"><span class="params">item</span> =&gt;</span> item(params));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.onceList.findIndex(<span class="function"><span class="params">item</span> =&gt;</span> item === name) &gt; <span class="number">-1</span>) <span class="keyword">this</span>.remove(name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setEvent</span>(<span class="params">name, fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> fnList = <span class="keyword">this</span>.emitList[name];</span><br><span class="line">    <span class="keyword">if</span> (!fnList) &#123;</span><br><span class="line">        <span class="keyword">this</span>.emitList[name] = [fn];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        fnList.push(fn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
   </div>
 
@@ -297,66 +233,11 @@ ga('send', 'pageview');
           <li class="item-toolbox">
             <a
               class="CIRCLE"
-              href="/category/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              分类
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/tag/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              标签
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/link/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              友链
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
               href="/about/"
               rel="noopener noreferrer"
               target="_self"
               >
               关于
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/atom.xml"
-              rel="noopener noreferrer"
-              target="_blank"
-              >
-              RSS
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/search/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              搜索
             </a>
           </li>
         
