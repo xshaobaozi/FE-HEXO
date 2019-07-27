@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>记字节跳动面试 | 某包子不负责任的blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="forsigner,前端,前端开发,frontend,design,nodejs,JavaScript">
+  
+
+  <meta name="description" content="记字节跳动面试前面过程就不说了 基础题 项目 xxx的 就说一下几个记得的题吧 题目setTimeout Promise1234567891011121314151617console.log(&apos;A&apos;)setTimeout(() =&amp;gt; &amp;#123;    console.log(&apos;B&apos;)&amp;#125;)Promise.resolve(() =&amp;gt; &amp;#123;    setTimeout(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记字节跳动面试">
+<meta property="og:url" content="http://yoursite.com/2019/07/27/betedance-base-gz-7/index.html">
+<meta property="og:site_name" content="某包子不负责任的blog">
+<meta property="og:description" content="记字节跳动面试前面过程就不说了 基础题 项目 xxx的 就说一下几个记得的题吧 题目setTimeout Promise1234567891011121314151617console.log(&apos;A&apos;)setTimeout(() =&amp;gt; &amp;#123;    console.log(&apos;B&apos;)&amp;#125;)Promise.resolve(() =&amp;gt; &amp;#123;    setTimeout(">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-27T12:20:57.047Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="记字节跳动面试">
+<meta name="twitter:description" content="记字节跳动面试前面过程就不说了 基础题 项目 xxx的 就说一下几个记得的题吧 题目setTimeout Promise1234567891011121314151617console.log(&apos;A&apos;)setTimeout(() =&amp;gt; &amp;#123;    console.log(&apos;B&apos;)&amp;#125;)Promise.resolve(() =&amp;gt; &amp;#123;    setTimeout(">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js?a=2','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<script src="/js/test.js"></script>
+<!-- End Google Analytics -->
+
+
+  
+
+  
+
+
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">导航</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">导航</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#记字节跳动面试"><span class="toc-text">记字节跳动面试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-text">题目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#setTimeout-Promise"><span class="toc-text">setTimeout Promise</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js实现一下bind"><span class="toc-text">js实现一下bind</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法题"><span class="toc-text">算法题</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-betedance-base-gz-7" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">记字节跳动面试</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2019.07.27</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>xshaobaozi</span>
+        </span>
+      
+
+      
+
+
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="记字节跳动面试"><a href="#记字节跳动面试" class="headerlink" title="记字节跳动面试"></a>记字节跳动面试</h2><p>前面过程就不说了 基础题 项目 xxx的</p>
+<p>就说一下几个记得的题吧</p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="setTimeout-Promise"><a href="#setTimeout-Promise" class="headerlink" title="setTimeout Promise"></a>setTimeout Promise</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'A'</span>)</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'B'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">Promise</span>.resolve(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'C'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'D'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'E'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//A D B E</span></span><br></pre></td></tr></table></figure>
+
+<p>讲解一下<br>这里应该主要考察的是 宏任务 和 微任务<br>setTimeout 是宏任务<br>Promise是微任务</p>
+<p>微任务 在事件循环中 加入到当前循环的底部<br>宏任务加入到事件队列中</p>
+<p>顺便再写一下 在node方面<br>process.nextTick 微任务<br>setImmediate 宏任务</p>
+<h3 id="js实现一下bind"><a href="#js实现一下bind" class="headerlink" title="js实现一下bind"></a>js实现一下bind</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> arg = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);;</span><br><span class="line">    <span class="keyword">const</span> that = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        that.apply(obj, arg.concat(<span class="built_in">Array</span>.from(<span class="built_in">arguments</span>)))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> bb = (<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">x,y</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;x&#125;</span>,<span class="subst">$&#123;y&#125;</span>,<span class="subst">$&#123;<span class="keyword">this</span>.a&#125;</span>`</span>)</span><br><span class="line">&#125;).bind(&#123;<span class="attr">a</span>: <span class="string">'22'</span>&#125;,<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">bb(<span class="number">2</span>);</span><br><span class="line"><span class="comment">// 1, 2, 22</span></span><br></pre></td></tr></table></figure>
+
+<p>这里应该主要运用的是闭包吧 还有arguments apply 和 call吧<br>没什么好说的 注意bind会返回一个函数</p>
+<h3 id="算法题"><a href="#算法题" class="headerlink" title="算法题"></a>算法题</h3><p>{}()[] = true<br>{[()]} = true<br>[(])[] = false<br>规则就是这样 请写出检测函数</p>
+<p>我？？？？？？？？平时不刷LeetCode的一脸懵逼<br>先说一下思路 要是大佬觉得🙆‍♂️ 那就开始写吧<br>然后 我写的时候 疯狂报错 整个页面都红了 大佬那个嘴角上扬的啊 我尴尬的想跑了<br>最后在大佬友善的指点下跑通了 一个 例子😁 后面两个跑不通<br>发现是忘记匹配多种情况了 欢声笑语中打出GG<br>面完出来就想到了 就写一下 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkString</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!str) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> left = [];</span><br><span class="line">    <span class="keyword">let</span> right = [];    </span><br><span class="line">    <span class="keyword">let</span> isStart = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> isSame = <span class="literal">true</span>;</span><br><span class="line">    str.split(<span class="string">''</span>).forEach(<span class="function">(<span class="params">item, $index</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (isSame === <span class="literal">false</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> ((item == <span class="string">')'</span> || item == <span class="string">']'</span> || item ==<span class="string">'&#125;'</span>) &amp;&amp; isStart === <span class="literal">false</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            isStart = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (isStart === <span class="literal">false</span>) &#123;</span><br><span class="line">            left.push(item)</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">if</span> (isStart === <span class="literal">true</span>) &#123;</span><br><span class="line">            right.push(item)</span><br><span class="line">            <span class="keyword">if</span> (left.length === right.length) &#123;</span><br><span class="line">                <span class="keyword">const</span> textLeft = swtich(left).join(<span class="string">''</span>);</span><br><span class="line">                <span class="keyword">const</span> textRight = right.reverse().join(<span class="string">''</span>);</span><br><span class="line">                isSame = textLeft === textRight;</span><br><span class="line">                left = [];</span><br><span class="line">                right = [];</span><br><span class="line">                isStart = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> isSame;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">swtich</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (item == <span class="string">'('</span>) <span class="keyword">return</span> <span class="string">')'</span>;</span><br><span class="line">        <span class="keyword">if</span> (item == <span class="string">'&#123;'</span>) <span class="keyword">return</span> <span class="string">'&#125;'</span>;</span><br><span class="line">        <span class="keyword">if</span> (item == <span class="string">'['</span>) <span class="keyword">return</span> <span class="string">']'</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(checkString(<span class="string">'&#123;[])&#125;'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// &#123;&#125;[]() -&gt; true</span></span><br><span class="line"><span class="comment">// &#123;[])&#125; -&gt; false</span></span><br><span class="line"><span class="comment">// [[[(((())))]]] -&gt; true</span></span><br><span class="line"><span class="comment">// [&#123;]&#125; -&gt; false</span></span><br></pre></td></tr></table></figure>
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2019/07/14/js-event/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
