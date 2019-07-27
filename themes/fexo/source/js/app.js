@@ -1,7 +1,7 @@
 
 (function() {
   'use strict';
-
+  console.log(1)
   var $html = document.documentElement;
   var $body = document.body;
   var $toc = document.getElementById('toc');
