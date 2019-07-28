@@ -104,7 +104,7 @@ init_page_content: HOME_NAV  # HOME_NAV | POST
 # =========================================================
 # Stats
 google_analytics: UA-38189205-1
-baidu_analytics: 
+baidu_analytics: d23f95d97488a6911b43be7cbcc906e5
 
 # Comment service
 
