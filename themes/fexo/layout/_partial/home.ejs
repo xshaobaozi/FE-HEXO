@@ -13,15 +13,17 @@
 
   <ul class="text-center nav">
     <% theme.home_nav.forEach(function(item, i){ %>
-      <li class="item">
-        <% if(item.target_blank === true) { %>
-          <a href="<%= item.url %>" rel="noopener noreferrer" target="_blank"><%= item.name %></a>
-        <% } else { %>
-          <a href="<%= item.url %>"><%= item.name %></a>
-        <% } %>
-        <span>|</span>
-      </li>
+    <li class="item">
+      <% if(item.target_blank === true) { %>
+      <a href="<%= item.url %>" rel="noopener noreferrer" target="_blank"><%= item.name %></a>
+      <% } else { %>
+      <a href="<%= item.url %>"><%= item.name %></a>
+      <% } %>
+      <span>|</span>
+    </li>
     <% }) %>
   </ul>
+  <div><a target="_blank" href="https://beian.aliyun.com/order/customerSiteView?siteId=5228269">粤ICP备19086031号-1</a>
+  </div>
 
 </div>
