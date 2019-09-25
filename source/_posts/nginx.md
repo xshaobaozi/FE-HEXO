@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-09-25 14:57:19
  * @LastEditors: xshaobaozi
- * @LastEditTime: 2019-09-25 14:57:19
+ * @LastEditTime: 2019-09-25 15:21:25
  -->
 ---
 title: nginx
@@ -103,8 +103,6 @@ tags:
                         index index.html index.htm;
                 }
         }
-        
-        
 ```
 
 * 80端口转发到本地xxxx端口
