@@ -6,7 +6,7 @@ tags:
 ## Electron
 
 ## 框架选型
-Next.js (理由：没用过)
+React (理由：不熟悉)
 cheerio （理由： 比较🔥）
 axios （第一反应是他）
 ## 设计需求
