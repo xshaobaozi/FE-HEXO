@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>nginx | 某包子不负责任的blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="forsigner,前端,前端开发,frontend,design,nodejs,JavaScript">
+  
+
+  <meta name="description" content="安装准备由于使用的事MacBook 所以使用Brew安装brewBrew又叫Homebrew，是Mac中的一款软件包管理工具，通过brew可以很方便的在Mac中安装软件或者是卸载软件.一般Mac电脑会默认安装有brew. 1/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nginx">
+<meta property="og:url" content="http://yoursite.com/2019/09/21/nginx/index.html">
+<meta property="og:site_name" content="某包子不负责任的blog">
+<meta property="og:description" content="安装准备由于使用的事MacBook 所以使用Brew安装brewBrew又叫Homebrew，是Mac中的一款软件包管理工具，通过brew可以很方便的在Mac中安装软件或者是卸载软件.一般Mac电脑会默认安装有brew. 1/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-21T15:46:07.979Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nginx">
+<meta name="twitter:description" content="安装准备由于使用的事MacBook 所以使用Brew安装brewBrew又叫Homebrew，是Mac中的一款软件包管理工具，通过brew可以很方便的在Mac中安装软件或者是卸载软件.一般Mac电脑会默认安装有brew. 1/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js?a=2','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<script src="/js/test.js"></script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?d23f95d97488a6911b43be7cbcc906e5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">导航</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">导航</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装准备"><span class="toc-text">安装准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#brew"><span class="toc-text">brew</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用时候的一些小问题"><span class="toc-text">使用时候的一些小问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些案例"><span class="toc-text">一些案例</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-nginx" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">nginx</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2019.09.21</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>xshaobaozi</span>
+        </span>
+      
+
+      
+
+
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="安装准备"><a href="#安装准备" class="headerlink" title="安装准备"></a>安装准备</h2><pre><code>由于使用的事MacBook 所以使用Brew安装</code></pre><h2 id="brew"><a href="#brew" class="headerlink" title="brew"></a>brew</h2><p><a href="https://brew.sh/" target="_blank" rel="noopener">Brew</a>又叫Homebrew，是Mac中的一款软件包管理工具，通过brew可以很方便的在Mac中安装软件或者是卸载软件.<br>一般Mac电脑会默认安装有brew.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>brew 搜索软件</p>
+<pre><code>brew search nginx</code></pre></li>
+<li><p>brew 安装软件</p>
+<pre><code>brew install nginx</code></pre></li>
+<li><p>brew 查看安装列表</p>
+<pre><code>brew list</code></pre></li>
+<li><p>brew 删除软件</p>
+<pre><code>brew uninstall nginx</code></pre></li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li><p>安装nginx</p>
+<pre><code>brew search nginx</code></pre></li>
+<li><p>启动nginx</p>
+<pre><code>sudo brew services start nginx</code></pre></li>
+<li><p><a href="http://localhost:8080" target="_blank" rel="noopener">打开网页</a>访问，出现nginx的默认启动页面</p>
+</li>
+<li><p>停止nginx</p>
+<pre><code>nginx -s stop</code></pre></li>
+<li><p>重新加载</p>
+<pre><code>nginx -s reload</code></pre></li>
+<li><p>检测配置文件</p>
+<pre><code>nginx -t</code></pre></li>
+</ul>
+<h2 id="使用时候的一些小问题"><a href="#使用时候的一些小问题" class="headerlink" title="使用时候的一些小问题"></a>使用时候的一些小问题</h2><ul>
+<li><p>查看nginx配置文件位置</p>
+<pre><code>nginx -t</code></pre></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx: the configuration file /usr/<span class="built_in">local</span>/etc/nginx/nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file /usr/<span class="built_in">local</span>/etc/nginx/nginx.conf <span class="built_in">test</span> is successful</span><br></pre></td></tr></table></figure>
+
+<p>文件位置在/usr/local/etc/nginx/nginx.conf</p>
+<ul>
+<li><p>brew安装查看nginx路径</p>
+<pre><code>brew list nginx</code></pre></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/Cellar/nginx/1.17.0/.bottle/etc/ (15 files)</span><br><span class="line">/usr/<span class="built_in">local</span>/Cellar/nginx/1.17.0/bin/nginx</span><br><span class="line">/usr/<span class="built_in">local</span>/Cellar/nginx/1.17.0/homebrew.mxcl.nginx.plist</span><br><span class="line">/usr/<span class="built_in">local</span>/Cellar/nginx/1.17.0/html -&gt; ../../../var/www</span><br><span class="line">/usr/<span class="built_in">local</span>/Cellar/nginx/1.17.0/share/man/man8/nginx.8</span><br><span class="line">/usr/<span class="built_in">local</span>/Cellar/nginx/1.17.0/share/nginx/ (2 files)</span><br></pre></td></tr></table></figure>
+
+<p>路径在/usr/local/Cellar/nginx/1.17.0/bin/nginx</p>
+<h2 id="一些案例"><a href="#一些案例" class="headerlink" title="一些案例"></a>一些案例</h2><ul>
+<li>请求80端口显示index文件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name xxxx;</span><br><span class="line">        location / &#123;</span><br><span class="line">                root /srv/xxxx/public;</span><br><span class="line">                index index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>80端口转发到本地xxxx端口</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name xxxx;</span><br><span class="line">        location /xxxx &#123;</span><br><span class="line">                proxy_pass http://127.0.0.1:xxxx;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2019/08/04/nodemon/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2019/09/22/使用webHook自动编译代码/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
