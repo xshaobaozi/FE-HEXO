@@ -1,3 +1,8 @@
+<!--
+ * @Date: 2019-09-25 14:57:19
+ * @LastEditors: xshaobaozi
+ * @LastEditTime: 2019-10-21 16:57:32
+ -->
 ---
 title: ubuntu的一点知识积累
 date: 2019-07-12 16:40:57
@@ -54,3 +59,9 @@ tags:
 ```bash
     apt install nodejs
 ```
+
+### bash
+删除指定目录文件
+        find [目录] -mtime +21 -name "*.*" -exec rm -Rf {} \;
+查看目录容量
+        du -h --max-depth=1
