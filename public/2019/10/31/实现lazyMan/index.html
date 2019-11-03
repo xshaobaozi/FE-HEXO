@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>实现lazyMan | 某包子不负责任的blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="forsigner,前端,前端开发,frontend,design,nodejs,JavaScript">
+  
+
+  <meta name="description" content="LazyMan网上看到的一个题目 123456789101112131415161718192021221.    LazyMan(&apos;Hank&apos;)    // Hi!This is Hank!2.    LazyMan(“Hank”).sleep(10).eat(“dinner”)    //Hi! This is Hank!    //...10s    //Wake up after 10">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实现lazyMan">
+<meta property="og:url" content="http://yoursite.com/2019/10/31/实现lazyMan/index.html">
+<meta property="og:site_name" content="某包子不负责任的blog">
+<meta property="og:description" content="LazyMan网上看到的一个题目 123456789101112131415161718192021221.    LazyMan(&apos;Hank&apos;)    // Hi!This is Hank!2.    LazyMan(“Hank”).sleep(10).eat(“dinner”)    //Hi! This is Hank!    //...10s    //Wake up after 10">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-11-01T02:25:02.494Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="实现lazyMan">
+<meta name="twitter:description" content="LazyMan网上看到的一个题目 123456789101112131415161718192021221.    LazyMan(&apos;Hank&apos;)    // Hi!This is Hank!2.    LazyMan(“Hank”).sleep(10).eat(“dinner”)    //Hi! This is Hank!    //...10s    //Wake up after 10">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js?a=2','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<script src="/js/test.js"></script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?d23f95d97488a6911b43be7cbcc906e5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">导航</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">导航</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LazyMan"><span class="toc-text">LazyMan</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-实现lazyMan" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">实现lazyMan</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2019.10.31</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>xshaobaozi</span>
+        </span>
+      
+
+      
+
+
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="LazyMan"><a href="#LazyMan" class="headerlink" title="LazyMan"></a>LazyMan</h2><pre><code>网上看到的一个题目
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span></span><br><span class="line">    LazyMan(<span class="string">'Hank'</span>)</span><br><span class="line">    <span class="comment">// Hi!This is Hank!</span></span><br><span class="line"></span><br><span class="line"><span class="number">2.</span></span><br><span class="line">    LazyMan(“Hank”).sleep(<span class="number">10</span>).eat(“dinner”)</span><br><span class="line">    <span class="comment">//Hi! This is Hank!</span></span><br><span class="line">    <span class="comment">//...10s</span></span><br><span class="line">    <span class="comment">//Wake up after 10</span></span><br><span class="line">    <span class="comment">//Eat dinner~</span></span><br><span class="line"></span><br><span class="line"><span class="number">3.</span></span><br><span class="line">    LazyMan(“Hank”).eat(“dinner”).eat(“supper”)</span><br><span class="line">    <span class="comment">//Hi This is Hank!</span></span><br><span class="line">    <span class="comment">//Eat dinner~</span></span><br><span class="line">    <span class="comment">//Eat supper~</span></span><br><span class="line"></span><br><span class="line"><span class="number">4.</span></span><br><span class="line">    LazyMan(“Hank”).sleepFirst(<span class="number">5</span>).eat(“supper”)</span><br><span class="line">    <span class="comment">//Wake up after 5</span></span><br><span class="line">    <span class="comment">//Hi This is Hank!</span></span><br><span class="line">    <span class="comment">//Eat supper</span></span><br></pre></td></tr></table></figure>
+
+大概如下</code></pre><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @Date: 2019-07-24 16:13:37</span></span><br><span class="line"><span class="comment"> * @LastEditors: xshaobaozi</span></span><br><span class="line"><span class="comment"> * @LastEditTime: 2019-10-31 19:27:09</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> MESSAGE = &#123;</span><br><span class="line">    <span class="number">1</span>: <span class="string">'Hi! This is '</span>,</span><br><span class="line">    <span class="number">2</span>: <span class="string">'Wake up after '</span>,</span><br><span class="line">    <span class="number">3</span>: <span class="string">'Eat '</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LazyMan</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">_LazyMan</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.printList = [&#123;</span><br><span class="line">            cb: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(MESSAGE[<span class="number">1</span>] + str);</span><br><span class="line">                <span class="keyword">this</span>.say();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line"></span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.say();</span><br><span class="line">        &#125;, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">    &#125;</span><br><span class="line">    _LazyMan.prototype.eat = <span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.printList.push(&#123;</span><br><span class="line">            cb: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(MESSAGE[<span class="number">3</span>] + str + <span class="string">'~'</span>);</span><br><span class="line">                <span class="keyword">this</span>.say();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    _LazyMan.prototype.sleep = <span class="function"><span class="keyword">function</span> (<span class="params">t</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.printList.push(&#123;</span><br><span class="line">            cb: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(MESSAGE[<span class="number">2</span>] + t)</span><br><span class="line">                    <span class="keyword">this</span>.say();</span><br><span class="line">                &#125;, t * <span class="number">1000</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    _LazyMan.prototype.say = <span class="function"><span class="keyword">function</span> (<span class="params">t</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> item = <span class="keyword">this</span>.printList.shift();</span><br><span class="line">        <span class="keyword">if</span> (item) &#123;</span><br><span class="line">            item.cb &amp;&amp; item.cb();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    _LazyMan.prototype.sleepFirst = <span class="function"><span class="keyword">function</span> (<span class="params">t</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.printList.unshift(&#123;</span><br><span class="line">            cb: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(MESSAGE[<span class="number">2</span>] + t)</span><br><span class="line">                    <span class="keyword">this</span>.say();</span><br><span class="line">                &#125;, t * <span class="number">1000</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> _LazyMan(str)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">LazyMan(<span class="string">'baobao'</span>).sleep(<span class="number">5</span>).eat(<span class="string">'dinner'</span>).eat(<span class="string">'supper'</span>).sleepFirst(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+    
+  </div>
+
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2019/10/09/electron漫画爬虫/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
