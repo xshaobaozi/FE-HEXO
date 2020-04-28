@@ -29,4 +29,15 @@ tags:
 3. 通过vuex进行通信，其实就是共享数据的吧（感觉也不能说是通信）
 
 ### 爷孙或者孙孙组件通讯
+当然还可以使用依赖注入
+```javascript
+    // root
+    provide: {
+        foo: 'foo',
+        handle: this.handle
+    }
+
+    //children
+    inject: ['foo', 'handle']
+```
 个人感觉深层级的调用应该很少这种场景 如果有的话 请思考一下为什么要这么写 但是如果真的有的话 参照上一方法
