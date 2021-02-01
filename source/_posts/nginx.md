@@ -1,8 +1,4 @@
-<!--
- * @Date: 2019-09-25 14:57:19
- * @LastEditors: xshaobaozi
- * @LastEditTime: 2019-09-25 15:27:12
- -->
+
 ---
 title: nginx
 date: 2019-09-21 13:36:55
