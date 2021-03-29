@@ -84,3 +84,12 @@ tags:
 查看目录容量
 
         du -h --max-depth=1
+### 查看用户名
+
+whoami
+
+### docker 每次都要sudo
+创建docker组：sudo groupadd docker
+将当前用户加入docker组：sudo gpasswd -a ${USER} docker
+重启服务：sudo service docker restart
+刷新docker成员：newgrp – docker
