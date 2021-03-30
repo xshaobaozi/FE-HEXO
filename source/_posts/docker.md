@@ -12,3 +12,4 @@ tags:
 * docker run -it images /bin/bash 
 * docker run -d images /bin/bash 
 * docker logs -f -t --tail
+* docker ps
