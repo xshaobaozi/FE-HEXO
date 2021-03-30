@@ -3,6 +3,7 @@ title: ubuntu更换阿里源
 date: 2021-03-14 21:54:57
 tags:
 ---
+## 安装docker
 ```bash
     #使用 apt-get 进行安装
     # step 1: 安装必要的一些系统工具
@@ -20,3 +21,16 @@ tags:
 
 ```
 
+
+### docker 每次都要sudo
+```bash
+    #创建docker组：
+    sudo groupadd docker
+    #将当前用户加入docker组：
+    sudo gpasswd -a ${USER} docker
+    #重启服务：
+    sudo service docker restart
+    #刷新docker成员：
+    newgrp – docker
+
+```
