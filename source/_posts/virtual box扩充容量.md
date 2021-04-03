@@ -1,5 +1,5 @@
 ---
-title: VBox扩充容量
+title: virtual box扩充容量
 date: 2021-03-28 10:54:57
 tags:
 ---
