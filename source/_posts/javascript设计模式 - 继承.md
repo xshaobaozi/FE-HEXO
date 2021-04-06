@@ -9,7 +9,7 @@ tags:
 
 ### 继承
 
-> 类式继承
+#### 类式继承
 
 ```javascript
 // 原型继承
@@ -40,7 +40,7 @@ console.log(instance2.list); // [ 1, 2, 3 ]
 
 
 
-> 构造函数继承
+#### 构造函数继承
 
 ```javascript
 // 原型继承
@@ -68,7 +68,7 @@ console.log(instance2.list);// [ 1, 2 ]
 
 
 
-> 组合继承
+#### 组合继承
 
 ```javascript
 // 原型继承
@@ -97,7 +97,7 @@ console.log(instance2.list);// [ 1, 2 ]
 
 
 
-> 原型式继承
+#### 原型式继承
 
 ```javascript
 const book = {
@@ -128,7 +128,7 @@ console.log(book2.list);//[ 1, 2, 3, 3 ]
 
 
 
-> 寄生继承
+#### 寄生继承
 
 ```javascript
 const book = {
@@ -162,7 +162,7 @@ console.log(book2.list); // [ 1, 2, 3, 3 ]
 
 
 
-> 寄生组合式继承
+#### 寄生组合式继承
 
 ```javascript
 function SuperClass() {
@@ -198,7 +198,7 @@ console.log(book2.list);// [ 1, 2, 3, 3 ]
 
 
 
-> 单继承
+#### 单继承
 
 ```javascript
 let extend = function(target, source) {
